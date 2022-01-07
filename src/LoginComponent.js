@@ -14,8 +14,10 @@ function LoginComponent(props){
         mail:email,
         password:password
       })
-     console.log(response) 
-     props.history.push('/Product')
+      if (response.data) {
+        await localStorage.setItem("token", response.data);
+        props.history.push("/Product");
+      }
 
   } catch(err) {
       console.warn(err)
