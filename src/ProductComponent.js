@@ -35,10 +35,10 @@ export default function App(props) {
     React.useState("Add to Cart");
 
   const CardOne_handleIncrement = () => {
-    if (CardOne_ButtonValue === "Add to Cart") {
-      CardOne_setButtonValue("Remove From Cart");
+    if (CardOne_setButtonValue === "BOOKED") {
+      CardOne_setButtonValue("BOOKED");
       setCounter(counter + 1);
-    } else if (CardOne_ButtonValue === "Remove From Cart") {
+    } else if (CardOne_ButtonValue === "AVAILABLE") {
       CardOne_setButtonValue("Add to Cart");
       setCounter(counter - 1);
     }
@@ -91,8 +91,9 @@ export default function App(props) {
                           variant="contained"
                           sx={{ borderRadius: "20px", height: "40px" }}
                           onClick={() => CardOne_handleIncrement()}
+                          value={row.room_status}
                         >
-                          {CardOne_ButtonValue}
+                          {row.room_status}
                         </Button>
                       </CardActions>
                     </Card>
