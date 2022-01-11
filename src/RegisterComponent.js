@@ -50,7 +50,7 @@ function RegisterComponent(props) {
             />
             <br />
             <TextField
-              value={email}
+              value={mail}
               onChange={(e) => setEmail(e.target.value)}
               type="email"
               placeholder="Email"
@@ -78,5 +78,4 @@ function RegisterComponent(props) {
     </>
   );
 }
-
 export default RegisterComponent;

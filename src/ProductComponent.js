@@ -24,7 +24,7 @@ export default function App(props) {
       props.history.push("/");
     } else {
       var response = await axios.get(
-        "http://express-backend-integra.herokuapp.com/roomDetails/get",
+        "https://express-backend-integra.herokuapp.com/roomDetails/get",
         {
           headers: {
             "access-token": token,
