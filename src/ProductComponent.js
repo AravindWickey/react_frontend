@@ -14,6 +14,7 @@ import { Grid } from "@mui/material";
 
 export default function App(props) {
   const [productList, setProductList] = useState([]);
+  const [responseButton, setresponseButton] = useState(0);
 
   useEffect(async () => {
     const token = localStorage.getItem("token");
@@ -22,17 +23,21 @@ export default function App(props) {
     if (decodedToken.exp * 1000 <= Date.now()) {
       props.history.push("/");
     } else {
-      var response = await axios.get("http://localhost:3001/roomDetails/get", {
-        headers: {
-          "access-token": token,
-        },
-      });
+      var response = await axios.get(
+        "https://express-backend-integra.herokuapp.com/roomDetails/get",
+        {
+          headers: {
+            "access-token": token,
+          },
+        }
+      );
       setProductList(response.data);
+      setresponseButton(response.data.room_status);
     }
   });
   const [counter, setCounter] = React.useState(0);
   const [CardOne_ButtonValue, CardOne_setButtonValue] =
-    React.useState("Add to Cart");
+    React.useState(`Add to Cart`);
 
   const CardOne_handleIncrement = () => {
     if (CardOne_setButtonValue === "BOOKED") {

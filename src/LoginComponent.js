@@ -14,7 +14,7 @@ function LoginComponent(props){
     }
     try {
       var response = await axios.post(
-        "http://localhost:3001/customerDetails/login",
+        "https://express-backend-integra.herokuapp.com/customerDetails/login",
         {
           mail: email,
           password: password,
