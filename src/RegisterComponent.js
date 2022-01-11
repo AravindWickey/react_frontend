@@ -22,8 +22,9 @@ function RegisterComponent(props) {
           password: password,
         }
       );
-      console.log(response);
-      props.history.push("/login");
+      if (response.data) {
+        props.history.push("/login");
+      }
     } catch (err) {
       console.warn(err);
     }
