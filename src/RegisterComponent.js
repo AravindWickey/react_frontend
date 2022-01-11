@@ -5,12 +5,12 @@ import { typography } from "@mui/system";
 
 function RegisterComponent(props) {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [mail, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (name == "" || email == "" || password == "") {
+    if (name == "" || mail == "" || password == "") {
       window.alert("All fields are requied");
     }
     try {
@@ -18,7 +18,7 @@ function RegisterComponent(props) {
         "https://express-backend-integra.herokuapp.com/customerDetails/create",
         {
           name: name,
-          mail: email,
+          mail: mail,
           password: password,
         }
       );
