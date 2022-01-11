@@ -23,9 +23,7 @@ function RegisterComponent(props) {
         }
       );
       console.log(response);
-      props.history.push(
-        "https://express-backend-integra.herokuapp.com/customerDetails/login"
-      );
+      props.history.push("/login");
     } catch (err) {
       console.warn(err);
     }
