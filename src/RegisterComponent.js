@@ -15,7 +15,7 @@ function RegisterComponent(props) {
     }
     try {
       var response = await axios.post(
-        "http://express-backend-integra.herokuapp.com/customerDetails/create",
+        "https://express-backend-integra.herokuapp.com/customerDetails/create",
         {
           name: name,
           mail: email,
