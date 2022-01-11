@@ -15,7 +15,7 @@ function RegisterComponent(props) {
     }
     try {
       var response = await axios.post(
-        "http://express-backend-integra.herokuapp.com/customerDetails/create",
+        "https://express-backend-integra.herokuapp.com/customerDetails/create",
         {
           name: name,
           mail: email,
@@ -23,7 +23,9 @@ function RegisterComponent(props) {
         }
       );
       console.log(response);
-      props.history.push("/login");
+      props.history.push(
+        "https://express-backend-integra.herokuapp.com/customerDetails/login"
+      );
     } catch (err) {
       console.warn(err);
     }
